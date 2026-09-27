@@ -1,0 +1,329 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  font-family: "Montserrat", sans-serif;
+  background: #c8b7a6;
+}
+
+/* Основной экран */
+
+.invitation {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: #c8b7a6;
+}
+
+/* Фотография молодожёнов */
+
+.couple {
+  position: absolute;
+  inset: 0;
+
+  background-image: url("https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1600&q=85");
+
+  background-size: cover;
+  background-position: center;
+
+  filter: saturate(0.75);
+  transform: scale(1.03);
+}
+
+/* Полупрозрачный слой */
+
+.overlay {
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(60, 48, 40, 0.72),
+      rgba(90, 73, 61, 0.48),
+      rgba(60, 48, 40, 0.72)
+    );
+
+  backdrop-filter: blur(1px);
+}
+
+/* Центральная карточка */
+
+.content {
+  position: relative;
+  z-index: 3;
+
+  width: min(600px, 90%);
+
+  padding: 55px 45px;
+
+  text-align: center;
+
+  color: #fffaf4;
+
+  background: rgba(58, 47, 40, 0.55);
+
+  border: 1px solid rgba(255, 255, 255, 0.35);
+
+  backdrop-filter: blur(8px);
+
+  box-shadow:
+    0 20px 60px rgba(0, 0, 0, 0.25);
+
+  border-radius: 3px;
+}
+
+/* Маленький заголовок */
+
+.small-title {
+  font-size: 11px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+
+  opacity: 0.9;
+
+  margin-bottom: 20px;
+}
+
+/* Главный заголовок */
+
+h1 {
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: clamp(48px, 8vw, 78px);
+
+  font-weight: 400;
+
+  line-height: 0.85;
+
+  letter-spacing: 2px;
+
+  text-transform: uppercase;
+}
+
+/* Имена */
+
+.names {
+  margin-top: 28px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 14px;
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: 38px;
+}
+
+.amp {
+  font-size: 28px;
+  opacity: 0.7;
+}
+
+/* Линия */
+
+.line {
+  width: 80px;
+  height: 1px;
+
+  background: rgba(255, 255, 255, 0.7);
+
+  margin: 25px auto;
+}
+
+/* Текст */
+
+.text {
+  max-width: 420px;
+
+  margin: 0 auto;
+
+  font-size: 13px;
+
+  line-height: 1.8;
+
+  font-weight: 300;
+
+  opacity: 0.9;
+}
+
+/* Информация */
+
+.details {
+  margin-top: 35px;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 20px;
+
+  text-align: left;
+}
+
+.detail {
+  display: flex;
+  align-items: center;
+
+  gap: 18px;
+
+  padding: 12px 15px;
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.icon {
+  width: 35px;
+  height: 35px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid rgba(255, 255, 255, 0.5);
+
+  border-radius: 50%;
+
+  font-size: 17px;
+}
+
+.detail div {
+  display: flex;
+  flex-direction: column;
+
+  gap: 3px;
+}
+
+.detail small {
+  font-size: 9px;
+
+  letter-spacing: 2px;
+
+  text-transform: uppercase;
+
+  opacity: 0.7;
+}
+
+.detail strong {
+  font-size: 13px;
+
+  font-weight: 500;
+}
+
+.detail span:not(.icon) {
+  font-size: 11px;
+
+  opacity: 0.75;
+}
+
+/* Кнопка */
+
+.calendar-btn {
+  margin-top: 30px;
+
+  padding: 13px 27px;
+
+  border: 1px solid rgba(255, 255, 255, 0.6);
+
+  background: rgba(255, 255, 255, 0.08);
+
+  color: white;
+
+  font-family: "Montserrat", sans-serif;
+
+  font-size: 11px;
+
+  letter-spacing: 1px;
+
+  cursor: pointer;
+
+  transition: 0.3s;
+}
+
+.calendar-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+
+  transform: translateY(-2px);
+}
+
+/* Нижняя надпись */
+
+.bottom-text {
+  margin-top: 28px;
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: 24px;
+
+  font-style: italic;
+
+  opacity: 0.9;
+}
+
+/* Цветы */
+
+.flowers {
+  position: absolute;
+
+  z-index: 2;
+
+  font-size: 130px;
+
+  opacity: 0.45;
+
+  filter: grayscale(0.4);
+
+  pointer-events: none;
+}
+
+.flowers-left {
+  left: -35px;
+  bottom: -20px;
+
+  transform: rotate(-25deg);
+}
+
+.flowers-right {
+  right: -35px;
+  top: -20px;
+
+  transform: rotate(155deg);
+}
+
+/* Мобильная версия */
+
+@media (max-width: 600px) {
+
+  .content {
+    padding: 40px 25px;
+  }
+
+  h1 {
+    font-size: 52px;
+  }
+
+  .names {
+    font-size: 32px;
+  }
+
+  .text {
+    font-size: 12px;
+  }
+
+  .flowers {
+    font-size: 90px;
+  }
+
+  .couple {
+    background-position: center;
+  }
+}
